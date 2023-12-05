@@ -83,5 +83,16 @@ def test_delete_picture_by_id(client):
     res = client.delete("/picture/100")
     assert res.status_code == 404
 
+#
+picture = {
+        "id": 200,
+        "pic_url": "http://dummyimage.com/230x100.png/dddddd/000000",
+        "event_country": "United States",
+        "event_state": "California",
+        "event_city": "Fremont",
+        "event_date": "11/2/2030"
+    }
+# client = "http://127.0.0.1:8080/picture"
+# test_post_picture(picture, client)
 
-
+#

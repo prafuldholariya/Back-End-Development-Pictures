@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flask MongoDB App</title>
+    <style>
+        th, td {
+          text-align: center;
+          padding: 10px; /* Adjust padding as needed */
+          font-size: medium;
+        }
+      </style>
+</head>
+<body>
+<a href="http://127.0.0.1:8080/insert/"> 1. Add </a> <br>
+<a href="http://127.0.0.1:8080/update/"> 2. Update </a> <br>
+<a href="http://127.0.0.1:8080/delete/"> 3. Delete </a> <br>
+<a href="http://127.0.0.1:8080/find/"> 4. find </a> <br>
+
+    <h1>Data from MongoDB</h1>
+    <table border="1">
+    <tr>
+        <th>    id    </th>
+        <th>    name    </th>
+        <th>    address </th>
+        <th>    age </th>
+        <th>    Edit  </th>
+        <th>    delete </th>
+    </tr>
+    {% for item in dataMdb %}
+    <tr>
+        <td>    {{item.id}}   </td>
+        <td>    {{item.name}}   </td>
+        <td>    {{item.address}}</td>
+        <td>    {{item.age}}    </td>
+        <td>  <a href="http://127.0.0.1:8080/update/{{item.id}}"> update </a> </td>
+        <td>  <a href="http://127.0.0.1:8080/delete/{{item.id}}"> delete </a> </td>
+
+    </tr>
+    {% endfor %}
+    </table>
+</body>
+</html>
